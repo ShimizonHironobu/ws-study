@@ -27,7 +27,7 @@ window.io = require('socket.io-client');
 //接続情報
 window.Echo = new Echo({
     broadcaster: 'socket.io',
-    host: "http://ws-study.tororincho.com"+':6001',
+    host: window.location.hostname+':6001',
 });
 
 //購読するチャネルの設定
