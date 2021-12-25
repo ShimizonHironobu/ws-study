@@ -21,9 +21,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/public-event', function(){
     broadcast(new PublicEvent);
     return 'public';
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    //チャットルーム
+    Route::get('/chatroom', [App\Http\Controllers\ChatRoomController::class, "index"])->name("chatroom");
+    Route::get('/chatroom/messages', [App\Http\Controllers\ChatRoomController::class, "fetchMessages"]);
+    Route::post('/chatroom/messages', [App\Http\Controllers\ChatRoomController::class, "sendMessage"]);
 });

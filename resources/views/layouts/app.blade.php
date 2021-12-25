@@ -9,6 +9,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -17,9 +18,29 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style type="text/css">
+        .message-icon {
+            width: 48px;
+            height: 48px;
+            text-align: center;
+            line-height: 48px;
+        }
+        .message-text {
+            display: inline-block;
+            max-width: 70%;
+            border-radius: 1rem;
+        }
+        .message-send-button {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0.3rem;
+            border-bottom-right-radius: 0.3rem;
+            border-bottom-left-radius: 0;
+        }
+    </style>
 </head>
 <body>
-    <div id="app">
+    <div>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">

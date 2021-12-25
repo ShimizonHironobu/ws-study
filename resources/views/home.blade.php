@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <a href="{{route("chatroom")}}" target="_blank">チャット　2021/12/26作成</a>
                 </div>
             </div>
         </div>
